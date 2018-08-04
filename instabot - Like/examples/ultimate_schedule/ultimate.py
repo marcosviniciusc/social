@@ -118,8 +118,8 @@ def run_threaded(job_fn):
     job_thread.start()
 
 
-#schedule.every(1).hour.do(run_threaded, stats)
-schedule.run_continuously(stats)
+schedule.every(1).hour.do(run_threaded, stats)
+#schedule.do(run_threaded, stats)
 schedule.every(8).hours.do(run_threaded, like_hashtags)
 schedule.every(2).hours.do(run_threaded, like_timeline)
 schedule.every(4).days.at("16:00").do(run_threaded, like_followers_from_random_user_file)
