@@ -41,7 +41,7 @@ def like_timeline():
 
 
 def like_followers_from_random_user_file():
-    bot.like_followers(random_user_file.random(), nlikes=3)
+    bot.like_followers(random_user_file.random(), nlikes=1)
 
 
 def follow_followers():
@@ -122,8 +122,8 @@ schedule.every(1).hour.do(run_threaded, stats)
 #schedule.do(run_threaded, stats)
 schedule.every(8).hours.do(run_threaded, like_hashtags)
 schedule.every(2).hours.do(run_threaded, like_timeline)
-schedule.every(80).minutes.do(run_threaded, like_followers_from_random_user_file)
 schedule.every(60).minutes.do(run_threaded, follow_followers)
+schedule.every(80).minutes.do(run_threaded, like_followers_from_random_user_file)
 #schedule.every(2).days.at("09:30").do(run_threaded, follow_followers)
 schedule.every(2).days.at("00:00").do(run_threaded, unfollow_non_followers)
 #schedule.every(12).hours.do(run_threaded, follow_users_from_hastag_file)
