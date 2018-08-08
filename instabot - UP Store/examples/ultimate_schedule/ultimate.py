@@ -16,7 +16,7 @@ bot = Bot(comments_file=config.COMMENTS_FILE,
           blacklist_file=config.BLACKLIST_FILE,
           whitelist_file=config.WHITELIST_FILE,
           friends_file=config.FRIENDS_FILE)
-bot.login()
+bot.login(username='up_store2',password='upstoreupstore')
 bot.logger.info("ULTIMATE script. Safe to run 24/7!")
 
 random_user_file = utils.file(config.USERS_FILE)
@@ -41,7 +41,7 @@ def like_timeline():
 
 
 def like_followers_from_random_user_file():
-    bot.like_followers(random_user_file.random(), nlikes=3)
+    bot.like_followers(random_user_file.random(), nlikes=1)
 
 
 def follow_followers():
@@ -119,14 +119,14 @@ def run_threaded(job_fn):
 
 
 schedule.every(1).hour.do(run_threaded, stats)
+#schedule.do(run_threaded, stats)
 schedule.every(8).hours.do(run_threaded, like_hashtags)
 schedule.every(2).hours.do(run_threaded, like_timeline)
-schedule.every(4).days.at("16:00").do(run_threaded, like_followers_from_random_user_file)
-schedule.every(3).hours.do(run_threaded, follow_followers)
+schedule.every(10).minutes.do(run_threaded, follow_followers)
+schedule.every(80).minutes.do(run_threaded, like_followers_from_random_user_file)
 #schedule.every(2).days.at("09:30").do(run_threaded, follow_followers)
-schedule.every(16).hours.do(run_threaded, comment_medias)
-schedule.every(1).days.at("00:00").do(run_threaded, unfollow_non_followers)
-schedule.every(12).hours.do(run_threaded, follow_users_from_hastag_file)
+schedule.every(2).days.at("00:00").do(run_threaded, unfollow_non_followers)
+#schedule.every(12).hours.do(run_threaded, follow_users_from_hastag_file)
 #schedule.every(6).hours.do(run_threaded, comment_hashtag)
 #schedule.every(1).days.at("21:28").do(run_threaded, upload_pictures)
 schedule.every(4).days.at("07:50").do(run_threaded, put_non_followers_on_blacklist)
