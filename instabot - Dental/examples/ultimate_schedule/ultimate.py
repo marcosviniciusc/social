@@ -16,7 +16,7 @@ bot = Bot(comments_file=config.COMMENTS_FILE,
           blacklist_file=config.BLACKLIST_FILE,
           whitelist_file=config.WHITELIST_FILE,
           friends_file=config.FRIENDS_FILE)
-bot.login()
+bot.login(username='dentalvidafarmaoficial',password='123.dental.321')
 bot.logger.info("ULTIMATE script. Safe to run 24/7!")
 
 random_user_file = utils.file(config.USERS_FILE)

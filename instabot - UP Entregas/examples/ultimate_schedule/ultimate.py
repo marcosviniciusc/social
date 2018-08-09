@@ -16,7 +16,7 @@ bot = Bot(comments_file=config.COMMENTS_FILE,
           blacklist_file=config.BLACKLIST_FILE,
           whitelist_file=config.WHITELIST_FILE,
           friends_file=config.FRIENDS_FILE)
-bot.login()
+bot.login(username='upentregasoficial',password='UpUA-84975400-1')
 bot.logger.info("ULTIMATE script. Safe to run 24/7!")
 
 random_user_file = utils.file(config.USERS_FILE)
@@ -33,7 +33,7 @@ def stats():
 
 
 def like_hashtags():
-    bot.like_hashtag(random_hashtag_file.random(), amount=700 // 24)
+    bot.like_hashtag(random_hashtag_file.random(), amount=500 // 24)
 
 
 def like_timeline():
@@ -41,7 +41,7 @@ def like_timeline():
 
 
 def like_followers_from_random_user_file():
-    bot.like_followers(random_user_file.random(), nlikes=3)
+    bot.like_followers(random_user_file.random(), nlikes=1)
 
 
 def follow_followers():
