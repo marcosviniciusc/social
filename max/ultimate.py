@@ -117,7 +117,7 @@ def run_threaded(job_fn):
     job_thread = threading.Thread(target=job_fn)
     job_thread.start()
 
-schedule.every(50).minutes.do(run_threaded, unfollow_non_followers)
+schedule.every(2).days.do(run_threaded, unfollow_non_followers)
 schedule.every(1).hour.do(run_threaded, stats)
 #schedule.do(run_threaded, stats)
 schedule.every(8).hours.do(run_threaded, like_hashtags)
