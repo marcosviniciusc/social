@@ -33,11 +33,11 @@ def stats():
 
 
 def like_hashtags():
-    bot.like_hashtag(random_hashtag_file.random(), amount=700 // 24)
+    bot.like_hashtag(random_hashtag_file.random(), amount=150 // 24)
 
 
 def like_timeline():
-    bot.like_timeline(amount=300 // 24)
+    bot.like_timeline(amount=150 // 24)
 
 
 def like_followers_from_random_user_file():
