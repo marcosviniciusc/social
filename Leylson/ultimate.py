@@ -16,7 +16,7 @@ bot = Bot(comments_file=config.COMMENTS_FILE,
           blacklist_file=config.BLACKLIST_FILE,
           whitelist_file=config.WHITELIST_FILE,
           friends_file=config.FRIENDS_FILE)
-bot.login(username='leylsonsou',password='76133155501')
+bot.login(username='leylsonsou',password='91542249le')
 bot.logger.info("ULTIMATE script. Safe to run 24/7!")
 
 random_user_file = utils.file(config.USERS_FILE)
@@ -118,14 +118,21 @@ def run_threaded(job_fn):
     job_thread.start()
 
 
+#schedule.every(2).days.do(run_threaded, unfollow_non_followers)
+schedule.every(30).minutes.do(run_threaded, unfollow_non_followers)
 schedule.every(1).hour.do(run_threaded, stats)
+
+schedule.every(3).hours.do(run_threaded, put_non_followers_on_blacklist)
 #schedule.do(run_threaded, stats)
-schedule.every(8).hours.do(run_threaded, like_hashtags)
+#schedule.every(8).hours.do(run_threaded, like_hashtags)
 schedule.every(2).hours.do(run_threaded, like_timeline)
 schedule.every(60).minutes.do(run_threaded, follow_followers)
-schedule.every(85).minutes.do(run_threaded, like_followers_from_random_user_file)
+schedule.every(80).minutes.do(run_threaded, like_followers_from_random_user_file)
 #schedule.every(2).days.at("09:30").do(run_threaded, follow_followers)
 schedule.every(2).days.at("00:00").do(run_threaded, unfollow_non_followers)
+
+schedule.every(14).hours.do(run_threaded, follow_followers)
+schedule.every(18).hours.do(run_threaded, like_followers_from_random_user_file)
 #schedule.every(12).hours.do(run_threaded, follow_users_from_hastag_file)
 #schedule.every(6).hours.do(run_threaded, comment_hashtag)
 #schedule.every(1).days.at("21:28").do(run_threaded, upload_pictures)
