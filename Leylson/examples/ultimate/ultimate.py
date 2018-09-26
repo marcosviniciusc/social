@@ -16,7 +16,8 @@ sys.path.append(os.path.join(sys.path[0], '../../'))
 from instabot import Bot
 
 bot = Bot()
-bot.login()
+
+bot.login(username='oacaidochefe',password='acaidochefe123.')
 
 print("Current script's schedule:")
 follow_followers_list = bot.read_list_from_file("follow_followers.txt")
